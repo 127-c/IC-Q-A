@@ -1,44 +1,72 @@
 # Q85. VIP怎么写？
 
-> 🏷️ 验证流程与综合 | ⭐⭐⭐ 困难 | 📝 简答题
+> 🏷️ 验证流程与综合 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
--  阶段1（定义)。
+Q85. VIP怎么写？ 
 
--  功能特性提取
+-  
+阶段1（定义)。
+ 
 
--  特性覆盖率创建及映射
+-  
+功能特性提取
+ 
+-  
+特性覆盖率创建及映射
+ 
+-  
+VIP的架构
+ 
 
--  VIP的架构
+-  
+阶段2(VIP基本搭建)
+ 
 
--  阶段2(VIP基本搭建)
+-  
+driver，sequencer，monitor (少量特性实现)。
+ 
+-  
+实现基本的端到端的sequence
+ 
 
--  driver，sequencer，monitor (少量特性实现)。
+-  
+阶段3(完成monitor与scoreboard)
+ 
 
--  实现基本的端到端的sequence
+-  
+完成monitor -100%实现（checkers，assertions）
+ 
+-  
+完成scoreboard -100%实现（数据完整性检查)
+ 
+-  
+在monitor中，完成监测到的transaction与function coverage实现映射。
+ 
+-  
+为映射更多的基本功能覆盖率，创建其它sequences。
+ 
 
--  阶段3(完成monitor与scoreboard)
+-  
+阶段4(扩充test和sequence阶段)
+ 
 
--  完成monitor -100%实现（checkers，assertions）
+-  
+实现更多sequences，从而获得80%的功能覆盖率
+ 
 
--  完成scoreboard -100%实现（数据完整性检查)
+-  
+阶段5(完成标准)
+ 
 
--  在monitor中，完成监测到的transaction与function coverage实现映射。
-
--  为映射更多的基本功能覆盖率，创建其它sequences。
-
--  阶段4(扩充test和sequence阶段)
-
--  实现更多sequences，从而获得80%的功能覆盖率
-
--  阶段5(完成标准)
-
--  Sequence最终可以实现100%的功能覆盖率。
-
--  回归测试结果和最终的总结报告。
+-  
+Sequence最终可以实现100%的功能覆盖率。
+ 
+-  
+回归测试结果和最终的总结报告。
 
 ---
 
@@ -52,8 +80,8 @@
 ---
 
 ## 💡 提示
-- 验证核心是证明功能正确，不是找bug
-- 结合项目经历回答更有说服力
+- 验证核心是证明功能正确，而不仅是找bug
+- 结合自己的项目经历回答最有说服力
 
 ---
 
@@ -62,39 +90,67 @@
 <details>
 <summary>点击展开完整答案</summary>
 
--  阶段1（定义)。
+Q85. VIP怎么写？ 
 
--  功能特性提取
+-  
+阶段1（定义)。
+ 
 
--  特性覆盖率创建及映射
+-  
+功能特性提取
+ 
+-  
+特性覆盖率创建及映射
+ 
+-  
+VIP的架构
+ 
 
--  VIP的架构
+-  
+阶段2(VIP基本搭建)
+ 
 
--  阶段2(VIP基本搭建)
+-  
+driver，sequencer，monitor (少量特性实现)。
+ 
+-  
+实现基本的端到端的sequence
+ 
 
--  driver，sequencer，monitor (少量特性实现)。
+-  
+阶段3(完成monitor与scoreboard)
+ 
 
--  实现基本的端到端的sequence
+-  
+完成monitor -100%实现（checkers，assertions）
+ 
+-  
+完成scoreboard -100%实现（数据完整性检查)
+ 
+-  
+在monitor中，完成监测到的transaction与function coverage实现映射。
+ 
+-  
+为映射更多的基本功能覆盖率，创建其它sequences。
+ 
 
--  阶段3(完成monitor与scoreboard)
+-  
+阶段4(扩充test和sequence阶段)
+ 
 
--  完成monitor -100%实现（checkers，assertions）
+-  
+实现更多sequences，从而获得80%的功能覆盖率
+ 
 
--  完成scoreboard -100%实现（数据完整性检查)
+-  
+阶段5(完成标准)
+ 
 
--  在monitor中，完成监测到的transaction与function coverage实现映射。
-
--  为映射更多的基本功能覆盖率，创建其它sequences。
-
--  阶段4(扩充test和sequence阶段)
-
--  实现更多sequences，从而获得80%的功能覆盖率
-
--  阶段5(完成标准)
-
--  Sequence最终可以实现100%的功能覆盖率。
-
--  回归测试结果和最终的总结报告。
+-  
+Sequence最终可以实现100%的功能覆盖率。
+ 
+-  
+回归测试结果和最终的总结报告。
 
 </details>
 

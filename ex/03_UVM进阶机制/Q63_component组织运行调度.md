@@ -1,10 +1,12 @@
 # Q63. UVM中各个component之间是如何组织运行的，串行还是并行，通过什么机制进行调度的
 
-> 🏷️ UVM 进阶机制 | ⭐⭐ 中等 | 📝 简答题
+> 🏷️ UVM 进阶机制 | 📝 练习
 
 ---
 
 ## 🎯 题目
+
+Q63. UVM中各个component之间是如何组织运行的，串行还是并行，通过什么机制进行调度的 
 
 Component 之间通过在new函数创建时指定parent参数指定子关系，通过这种方法来将TB形成一个树形结构。UVM中运行是通过Phase机制进行层次化仿真的。从组件来看各个组件并行运行，从phase上看是串行运行，有层次化的。Phase机制的9个phase是串行运行的，不同组件中的同一个phase都运行完毕后才能进入下一个phase运行，同一个phase在不同组件中的运行也是由一定顺序的,build 和 final是自顶向下。
 
@@ -29,6 +31,8 @@ Component 之间通过在new函数创建时指定parent参数指定子关系，�
 
 <details>
 <summary>点击展开完整答案</summary>
+
+Q63. UVM中各个component之间是如何组织运行的，串行还是并行，通过什么机制进行调度的 
 
 Component 之间通过在new函数创建时指定parent参数指定子关系，通过这种方法来将TB形成一个树形结构。UVM中运行是通过Phase机制进行层次化仿真的。从组件来看各个组件并行运行，从phase上看是串行运行，有层次化的。Phase机制的9个phase是串行运行的，不同组件中的同一个phase都运行完毕后才能进入下一个phase运行，同一个phase在不同组件中的运行也是由一定顺序的,build 和 final是自顶向下。
 

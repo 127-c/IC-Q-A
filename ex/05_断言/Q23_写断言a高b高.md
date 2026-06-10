@@ -1,11 +1,13 @@
 # Q23. 用过断言嘛？写一个断言，a为高的时候，b为高，还有a为高的时候，下一个周期b为高
 
-> 🏷️ 断言 SVA | ⭐⭐ 中等 | 💻 代码题
-> 📂 配套练习文件: [`Q23_写断言a高b高.sv`](./Q23_写断言a高b高.sv)
+> 🏷️ 断言 SVA | 📝 练习
+> 📂 配套代码: [`Q23_写断言a高b高.sv`](./Q23_写断言a高b高.sv)
 
 ---
 
 ## 🎯 题目
+
+Q23. 用过断言嘛？写一个断言，a为高的时候，b为高，还有a为高的时候，下一个周期b为高 
 
 ```systemverilog
 property a_high_then_b_high;  //a和b同时为高
@@ -19,7 +21,6 @@ property a_high_then_b_high;
 endproperty
 
 a:assert property(a_high_then_b_high);
-
 ```
 
 ---
@@ -29,20 +30,17 @@ a:assert property(a_high_then_b_high);
 - [ ] 理解题目核心概念，能用自己的语言解释
 - [ ] 写出简洁的要点答案
 - [ ] 打开 `.sv` 文件，完成所有 `// TODO:` 标记的代码
-- [ ] 尝试编译/仿真验证你的代码
+- [ ] 结合项目经验举例说明
 - [ ] 列出面试中可能的追问
 
 ---
-
-## 💻 代码练习
-
-> 请打开 [`Q23_写断言a高b高.sv`](./Q23_写断言a高b高.sv) 完成代码 TODO，然后回到这里查看答案。
+> 💻 请打开 [`Q23_写断言a高b高.sv`](./Q23_写断言a高b高.sv) 完成代码练习，然后回来看答案。
 
 ---
 
 ## 💡 提示
 - 区分 |-> 和 |=> 的区别
-- 断言不仅能检查错误，也能做功能覆盖率
+- 断言不仅能检查错误，也能收集功能覆盖率
 
 ---
 
@@ -50,6 +48,8 @@ a:assert property(a_high_then_b_high);
 
 <details>
 <summary>点击展开完整答案</summary>
+
+Q23. 用过断言嘛？写一个断言，a为高的时候，b为高，还有a为高的时候，下一个周期b为高 
 
 ```systemverilog
 property a_high_then_b_high;  //a和b同时为高
@@ -63,7 +63,6 @@ property a_high_then_b_high;
 endproperty
 
 a:assert property(a_high_then_b_high);
-
 ```
 
 </details>

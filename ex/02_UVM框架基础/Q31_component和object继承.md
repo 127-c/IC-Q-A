@@ -1,12 +1,37 @@
 # Q31. 哪些继承于component，哪些继承于object
 
-> 🏷️ UVM 框架基础 | ⭐⭐ 中等 | 📝 简答题
+> 🏷️ UVM 框架基础 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
-除了driver、monitor、agent、model、scoreboard、env、test之外全部用uvm_object。
+
+**题目**: 哪些继承于component，哪些继承于object？
+
+**核心区分**:
+- **继承于 uvm_component** (参与树形结构，有phase机制):
+  - driver, monitor, sequencer, agent
+  - scoreboard, reference model (通常)
+  - env, test
+  - predictor, coverage collector
+
+- **继承于 uvm_object** (不参与树形结构，无phase):
+  - sequence_item (transaction)
+  - sequence
+  - config (配置对象)
+  - uvm_reg (寄存器模型相关)
+
+**记忆技巧**: 除了driver、monitor、agent、sequencer、scoreboard、env、test之外，全部用uvm_object。
+
+
+Q31. 哪些继承于component，哪些继承于object 
+
+> 📷 [图片](https://i-blog.csdnimg.cn/blog_migrate/f928464bc2982434e87ab6b7657a90e7.png)
+
+ 
+
+ 除了driver、monitor、agent、model、scoreboard、env、test之外全部用uvm_object。
 
 ---
 
@@ -30,7 +55,32 @@
 <details>
 <summary>点击展开完整答案</summary>
 
-除了driver、monitor、agent、model、scoreboard、env、test之外全部用uvm_object。
+
+**题目**: 哪些继承于component，哪些继承于object？
+
+**核心区分**:
+- **继承于 uvm_component** (参与树形结构，有phase机制):
+  - driver, monitor, sequencer, agent
+  - scoreboard, reference model (通常)
+  - env, test
+  - predictor, coverage collector
+
+- **继承于 uvm_object** (不参与树形结构，无phase):
+  - sequence_item (transaction)
+  - sequence
+  - config (配置对象)
+  - uvm_reg (寄存器模型相关)
+
+**记忆技巧**: 除了driver、monitor、agent、sequencer、scoreboard、env、test之外，全部用uvm_object。
+
+
+Q31. 哪些继承于component，哪些继承于object 
+
+> 📷 [图片](https://i-blog.csdnimg.cn/blog_migrate/f928464bc2982434e87ab6b7657a90e7.png)
+
+ 
+
+ 除了driver、monitor、agent、model、scoreboard、env、test之外全部用uvm_object。
 
 </details>
 

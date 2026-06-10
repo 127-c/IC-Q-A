@@ -1,13 +1,41 @@
 # Q8. SV中的interface的clock blocking的功能
 
-> 🏷️ SystemVerilog 基础 | ⭐⭐ 中等 | 📝 简答题
+> 🏷️ SystemVerilog 基础 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
-- Interface是一组接口，用于对信号进行一个封装，捆扎起来。如果像 verilog中对各个信号进行连接，每一层我们都需要对接口信号进行定义，若信号过多，很容易出现人为错误，而且后期的可重用性不高。因此使用interface接口进行连接，不仅可以简化代码，而且提高可重用性，除此之外，interface内部提供了其他一些功能，用于测试平台与DUT之间的同步和避免竞争。
 
+**题目**: SV中的interface的clocking block的功能是什么？
+
+**核心要点**:
+- Interface是一组信号的封装，将相关信号捆扎在一起，简化连接，提高重用性
+- Clocking block定义在interface内部，用于同步信号，避免TB与DUT之间的竞争（race condition）
+- 采样（input）提前于时钟沿，驱动（output）落后于时钟沿
+- 通过 `input skew` 和 `output skew` 来精确控制时序
+- modport可以将clocking block分配给不同的组件使用
+
+**示例**:
+```systemverilog
+interface bus_if(input bit clk);
+  logic [7:0] data;
+  logic valid;
+
+  clocking drv_cb @(posedge clk);
+    output data, valid;   // 驱动侧
+  endclocking
+
+  clocking mon_cb @(posedge clk);
+    input data, valid;    // 监测侧
+  endclocking
+endinterface
+```
+
+
+Q8. SV中的interface的clock blocking的功能 
+
+- Interface是一组接口，用于对信号进行一个封装，捆扎起来。如果像 verilog中对各个信号进行连接，每一层我们都需要对接口信号进行定义，若信号过多，很容易出现人为错误，而且后期的可重用性不高。因此使用interface接口进行连接，不仅可以简化代码，而且提高可重用性，除此之外，interface内部提供了其他一些功能，用于测试平台与DUT之间的同步和避免竞争。
 - Clocking block:在interface内部我们可以定义clocking块，可以使得信号保持同步,对于接口的采样和驱动有详细的设置操作，从而避免TB与 DUT的接口竞争，减少我们由于信号竞争导致的错误。采样提前，驱动落后，保证信号不会出现竞争。
 
 ---
@@ -23,7 +51,7 @@
 
 ## 💡 提示
 - 回顾SystemVerilog LRM相关章节
-- 注意对比不同数据结构/机制的使用场景
+- 注意对比不同机制的使用场景和差异
 
 ---
 
@@ -32,8 +60,36 @@
 <details>
 <summary>点击展开完整答案</summary>
 
-- Interface是一组接口，用于对信号进行一个封装，捆扎起来。如果像 verilog中对各个信号进行连接，每一层我们都需要对接口信号进行定义，若信号过多，很容易出现人为错误，而且后期的可重用性不高。因此使用interface接口进行连接，不仅可以简化代码，而且提高可重用性，除此之外，interface内部提供了其他一些功能，用于测试平台与DUT之间的同步和避免竞争。
 
+**题目**: SV中的interface的clocking block的功能是什么？
+
+**核心要点**:
+- Interface是一组信号的封装，将相关信号捆扎在一起，简化连接，提高重用性
+- Clocking block定义在interface内部，用于同步信号，避免TB与DUT之间的竞争（race condition）
+- 采样（input）提前于时钟沿，驱动（output）落后于时钟沿
+- 通过 `input skew` 和 `output skew` 来精确控制时序
+- modport可以将clocking block分配给不同的组件使用
+
+**示例**:
+```systemverilog
+interface bus_if(input bit clk);
+  logic [7:0] data;
+  logic valid;
+
+  clocking drv_cb @(posedge clk);
+    output data, valid;   // 驱动侧
+  endclocking
+
+  clocking mon_cb @(posedge clk);
+    input data, valid;    // 监测侧
+  endclocking
+endinterface
+```
+
+
+Q8. SV中的interface的clock blocking的功能 
+
+- Interface是一组接口，用于对信号进行一个封装，捆扎起来。如果像 verilog中对各个信号进行连接，每一层我们都需要对接口信号进行定义，若信号过多，很容易出现人为错误，而且后期的可重用性不高。因此使用interface接口进行连接，不仅可以简化代码，而且提高可重用性，除此之外，interface内部提供了其他一些功能，用于测试平台与DUT之间的同步和避免竞争。
 - Clocking block:在interface内部我们可以定义clocking块，可以使得信号保持同步,对于接口的采样和驱动有详细的设置操作，从而避免TB与 DUT的接口竞争，减少我们由于信号竞争导致的错误。采样提前，驱动落后，保证信号不会出现竞争。
 
 </details>

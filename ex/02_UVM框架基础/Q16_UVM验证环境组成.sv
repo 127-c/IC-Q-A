@@ -1,19 +1,18 @@
 //=============================================================
-// Q16_练习：UVM 验证环境组成 (agent/driver/monitor/sequencer/env)
-// 难度: ⭐⭐ | 目标: 搭建一个完整的UVM环境骨架
+// Q16_练习：UVM验证环境组成 (agent + driver + monitor + sequencer + env)
+// 难度: ⭐⭐ | 目标: 搭建完整的env骨架
 //=============================================================
 
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 
-// --- transaction ---
 class my_item extends uvm_sequence_item;
   `uvm_object_utils(my_item)
   rand bit [7:0] data;
   function new(string name="my_item"); super.new(name); endfunction
 endclass
 
-// --- driver ---
+// driver
 class my_driver extends uvm_driver #(my_item);
   `uvm_component_utils(my_driver)
   function new(string name, uvm_component parent); super.new(name, parent); endfunction
@@ -27,7 +26,13 @@ class my_driver extends uvm_driver #(my_item);
   endtask
 endclass
 
-// --- monitor ---
+// sequencer
+class my_sequencer extends uvm_sequencer #(my_item);
+  `uvm_component_utils(my_sequencer)
+  function new(string name, uvm_component parent); super.new(name, parent); endfunction
+endclass
+
+// monitor
 class my_monitor extends uvm_monitor;
   `uvm_component_utils(my_monitor)
   uvm_analysis_port #(my_item) ap;
@@ -35,24 +40,11 @@ class my_monitor extends uvm_monitor;
   function void build_phase(uvm_phase phase);
     ap = new("ap", this);
   endfunction
-  task run_phase(uvm_phase phase);
-    my_item item;
-    forever begin
-      #5;
-      item = my_item::type_id::create("item");
-      item.data = $random;
-      ap.write(item);
-    end
-  endtask
 endclass
 
-// --- sequencer ---
-class my_sequencer extends uvm_sequencer #(my_item);
-  `uvm_component_utils(my_sequencer)
-  function new(string name, uvm_component parent); super.new(name, parent); endfunction
-endclass
-
-// --- agent ---
+//----------------------------------------------------------
+// TODO: agent — 封装 driver + monitor + sequencer
+//----------------------------------------------------------
 class my_agent extends uvm_agent;
   `uvm_component_utils(my_agent)
   my_driver    drv;
@@ -61,23 +53,22 @@ class my_agent extends uvm_agent;
   function new(string name, uvm_component parent); super.new(name, parent); endfunction
 
   function void build_phase(uvm_phase phase);
-    // TODO: 创建 driver, monitor, sequencer
-    drv = my_driver::type_id::create("drv", this);
-    mon = my_monitor::type_id::create("mon", this);
-    sqr = my_sequencer::type_id::create("sqr", this);
+    // TODO: 创建三个组件
+    // 【参考答案】drv = my_driver::type_id::create("drv", this);
+    // 【参考答案】mon = my_monitor::type_id::create("mon", this);
+    // 【参考答案】sqr = my_sequencer::type_id::create("sqr", this);
   endfunction
 
   function void connect_phase(uvm_phase phase);
-    // TODO: 连接 driver 的 seq_item_port 到 sequencer 的 seq_item_export
-    drv.seq_item_port.connect(sqr.seq_item_export);
+    // TODO: 连接 driver的seq_item_port → sequencer的seq_item_export
+    // 【参考答案】drv.seq_item_port.connect(sqr.seq_item_export);
   endfunction
 endclass
 
-// --- env ---
+// env
 class my_env extends uvm_env;
   `uvm_component_utils(my_env)
   my_agent agt;
-  function new(string name, uvm_component parent); super.new(name, parent); endfunction
   function void build_phase(uvm_phase phase);
     agt = my_agent::type_id::create("agt", this);
   endfunction

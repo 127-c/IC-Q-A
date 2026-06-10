@@ -1,16 +1,21 @@
 # Q64. UVM如何启动一个sequence
 
-> 🏷️ UVM 进阶机制 | ⭐⭐ 中等 | 💻 代码题
+> 🏷️ UVM 进阶机制 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
--  启动sequence有很多的方法:常用的方法有使用default sequence进行调用，其会将对应的sequence 与 sequencer绑定，当dirver请求获得req时，sequencer就会调用对应的sequence去运行body函数，从而产生req。
+Q64. UVM如何启动一个sequence 
 
--  除此之外，还可以使用start函数进行，其参数主要就是对应的需要绑定的sequencer和该类的上层sequence。如此，就可以实现启动sequence的功能。
-
--  注意:一般仿真开始结束会在sequence 中 raise objection和 drop objection
+-  
+启动sequence有很多的方法:常用的方法有使用default sequence进行调用，其会将对应的sequence 与 sequencer绑定，当dirver请求获得req时，sequencer就会调用对应的sequence去运行body函数，从而产生req。
+ 
+-  
+除此之外，还可以使用start函数进行，其参数主要就是对应的需要绑定的sequencer和该类的上层sequence。如此，就可以实现启动sequence的功能。
+ 
+-  
+注意:一般仿真开始结束会在sequence 中 raise objection和 drop objection
 
 ---
 
@@ -18,8 +23,7 @@
 
 - [ ] 理解题目核心概念，能用自己的语言解释
 - [ ] 写出简洁的要点答案
-- [ ] 打开 `.sv` 文件，完成所有 `// TODO:` 标记的代码
-- [ ] 尝试编译/仿真验证你的代码
+- [ ] 结合项目经验举例说明
 - [ ] 列出面试中可能的追问
 
 ---
@@ -35,11 +39,16 @@
 <details>
 <summary>点击展开完整答案</summary>
 
--  启动sequence有很多的方法:常用的方法有使用default sequence进行调用，其会将对应的sequence 与 sequencer绑定，当dirver请求获得req时，sequencer就会调用对应的sequence去运行body函数，从而产生req。
+Q64. UVM如何启动一个sequence 
 
--  除此之外，还可以使用start函数进行，其参数主要就是对应的需要绑定的sequencer和该类的上层sequence。如此，就可以实现启动sequence的功能。
-
--  注意:一般仿真开始结束会在sequence 中 raise objection和 drop objection
+-  
+启动sequence有很多的方法:常用的方法有使用default sequence进行调用，其会将对应的sequence 与 sequencer绑定，当dirver请求获得req时，sequencer就会调用对应的sequence去运行body函数，从而产生req。
+ 
+-  
+除此之外，还可以使用start函数进行，其参数主要就是对应的需要绑定的sequencer和该类的上层sequence。如此，就可以实现启动sequence的功能。
+ 
+-  
+注意:一般仿真开始结束会在sequence 中 raise objection和 drop objection
 
 </details>
 

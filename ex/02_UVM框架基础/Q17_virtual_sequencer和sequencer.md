@@ -1,15 +1,15 @@
 # Q17. Virtual sequencer 和sequencer的区别
 
-> 🏷️ UVM 框架基础 | ⭐⭐ 中等 | 📝 简答题
+> 🏷️ UVM 框架基础 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
+Q17. Virtual sequencer 和sequencer的区别 
+
 - Virtual sequencer主要用于对不同的agent进行协调时，需要有一定顶层的sequencer对内部各个agent中的sequencer进行协调
-
 - virtual sequencer是面向多个sequencer的多个sequence群，而sequencer是面向一个sequencer 的sequence群。
-
 - Virtual sequencer桥接着所有底层的sequencer的句柄，其本身也不需要传递item，不需要和driver连接。只需要将其内部的底层sequencer句柄和sequencer 实体对象连接。
 
 ---
@@ -34,10 +34,10 @@
 <details>
 <summary>点击展开完整答案</summary>
 
+Q17. Virtual sequencer 和sequencer的区别 
+
 - Virtual sequencer主要用于对不同的agent进行协调时，需要有一定顶层的sequencer对内部各个agent中的sequencer进行协调
-
 - virtual sequencer是面向多个sequencer的多个sequence群，而sequencer是面向一个sequencer 的sequence群。
-
 - Virtual sequencer桥接着所有底层的sequencer的句柄，其本身也不需要传递item，不需要和driver连接。只需要将其内部的底层sequencer句柄和sequencer 实体对象连接。
 
 </details>

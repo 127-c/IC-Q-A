@@ -1,10 +1,12 @@
 # Q49. phase中的domain概念
 
-> 🏷️ UVM 进阶机制 | ⭐⭐ 中等 | 📝 简答题
+> 🏷️ UVM 进阶机制 | 📝 练习
 
 ---
 
 ## 🎯 题目
+
+Q49. phase中的domain概念 
 
 Domain是用来组织不同组件，实现独立运行的概率。默认情况下，UVM的9个phase属于 common_domain，12个小phase属于uvm_domain。例如，如果我们有两个dirver类，默认情况下，两个driver类中的复位phase和 main phase必须同时执行,但是我们可以设置两个driver属于不同的domain,这样两个dirver就是独立运行的了，相当于处于不同的时钟域(只针对12个小phase有效)。
 
@@ -29,6 +31,8 @@ Domain是用来组织不同组件，实现独立运行的概率。默认情况�
 
 <details>
 <summary>点击展开完整答案</summary>
+
+Q49. phase中的domain概念 
 
 Domain是用来组织不同组件，实现独立运行的概率。默认情况下，UVM的9个phase属于 common_domain，12个小phase属于uvm_domain。例如，如果我们有两个dirver类，默认情况下，两个driver类中的复位phase和 main phase必须同时执行,但是我们可以设置两个driver属于不同的domain,这样两个dirver就是独立运行的了，相当于处于不同的时钟域(只针对12个小phase有效)。
 

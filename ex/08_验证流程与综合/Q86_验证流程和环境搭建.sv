@@ -1,6 +1,6 @@
 //=============================================================
 // Q86_练习：验证流程与环境搭建
-// 难度: ⭐⭐⭐ | 目标: 写出完整的验证环境目录和文件结构
+// 难度: ⭐⭐⭐ | 目标: 写出完整的验证目录结构
 //=============================================================
 
 // =============================================================
@@ -16,14 +16,14 @@
 // │   ├── my_pkg.sv        ← package, import所有文件
 // │   ├── item.sv          ← transaction定义
 // │   ├── sequence.sv      ← sequence
-// │   ├── sequencer.sv     ← sequencer
-// │   ├── driver.sv        ← driver
-// │   ├── monitor.sv       ← monitor
-// │   ├── agent.sv         ← agent(封装drv+mon+sqr)
+// │   ├── sequencer.sv
+// │   ├── driver.sv
+// │   ├── monitor.sv
+// │   ├── agent.sv
 // │   ├── model.sv         ← reference model
-// │   ├── scoreboard.sv    ← checker
-// │   ├── coverage.sv      ← coverage collector
-// │   ├── env.sv           ← env(封装agent+model+scb)
+// │   ├── scoreboard.sv
+// │   ├── coverage.sv
+// │   ├── env.sv
 // │   └── test.sv          ← test base class
 // ├── tests/               ← 测试用例
 // │   ├── test_smoke.sv
@@ -34,28 +34,17 @@
 //     └── regress.sh
 // =============================================================
 
-
 // TODO: 完成package文件
-package my_pkg;
-  import uvm_pkg::*;
-  `include "uvm_macros.svh"
-
-  `include "item.sv"
-  `include "sequence.sv"
-  `include "sequencer.sv"
-  `include "driver.sv"
-  `include "monitor.sv"
-  `include "agent.sv"
-  `include "model.sv"
-  `include "scoreboard.sv"
-  `include "coverage.sv"
-  `include "env.sv"
-  `include "test.sv"
-endpackage
+// package my_pkg;
+//   import uvm_pkg::*;
+//   `include "uvm_macros.svh"
+//   `include "item.sv"
+//   `include "sequence.sv"
+//   ... (include所有tb文件)
+// endpackage
 
 
-// TODO: 完成验证流程图
-//
-//  阅读Spec ──→ 制定验证计划 ──→ 搭建TB ──→ 编写case
-//      ↑                                      ↓
-//      └──── 总结报告 ←── 回归测试 ←── 分析覆盖率
+// 验证流程:
+// 阅读Spec → 制定验证计划 → 搭建TB → 编写case
+//    ↑                                        ↓
+//    └── 总结报告 ←── 回归测试 ←── 分析覆盖率

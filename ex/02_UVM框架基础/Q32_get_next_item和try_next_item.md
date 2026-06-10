@@ -1,13 +1,46 @@
 # Q32. get_next_item（）和try_next_item（）有什么区别
 
-> 🏷️ UVM 框架基础 | ⭐⭐ 中等 | 📝 简答题
+> 🏷️ UVM 框架基础 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
-- get_next_item（）是一个阻塞调用，直到存在可供驱动的sequence item为止，并返回指向sequence item的指针。
 
+**题目**: get_next_item()和try_next_item()有什么区别？
+
+**核心要点**:
+- `get_next_item()`: **阻塞调用**，会一直等待直到有可用的sequence_item，然后返回其指针。driver需要配合 `item_done()` 使用
+- `try_next_item()`: **非阻塞调用**，如果没有可用的sequence_item，立即返回null指针
+
+**使用场景**:
+```systemverilog
+task run_phase(uvm_phase phase);
+  forever begin
+    seq_item_port.get_next_item(req);  // 阻塞等待
+    // 驱动到DUT...
+    seq_item_port.item_done();
+  end
+endtask
+
+// try_next_item: 有就处理，没有就做其他事
+task run_phase(uvm_phase phase);
+  forever begin
+    if (seq_item_port.try_next_item(req)) begin
+      // 处理item
+      seq_item_port.item_done();
+    end else begin
+      // 没有item, 发idle或等待
+      @(posedge vif.clk);
+    end
+  end
+endtask
+```
+
+
+Q32. get_next_item（）和try_next_item（）有什么区别 
+
+- get_next_item（）是一个阻塞调用，直到存在可供驱动的sequence item为止，并返回指向sequence item的指针。
 - try_next_item（）是非阻塞调用，如果没有可供驱动的sequence item，则返回空指针。
 
 ---
@@ -32,8 +65,41 @@
 <details>
 <summary>点击展开完整答案</summary>
 
-- get_next_item（）是一个阻塞调用，直到存在可供驱动的sequence item为止，并返回指向sequence item的指针。
 
+**题目**: get_next_item()和try_next_item()有什么区别？
+
+**核心要点**:
+- `get_next_item()`: **阻塞调用**，会一直等待直到有可用的sequence_item，然后返回其指针。driver需要配合 `item_done()` 使用
+- `try_next_item()`: **非阻塞调用**，如果没有可用的sequence_item，立即返回null指针
+
+**使用场景**:
+```systemverilog
+task run_phase(uvm_phase phase);
+  forever begin
+    seq_item_port.get_next_item(req);  // 阻塞等待
+    // 驱动到DUT...
+    seq_item_port.item_done();
+  end
+endtask
+
+// try_next_item: 有就处理，没有就做其他事
+task run_phase(uvm_phase phase);
+  forever begin
+    if (seq_item_port.try_next_item(req)) begin
+      // 处理item
+      seq_item_port.item_done();
+    end else begin
+      // 没有item, 发idle或等待
+      @(posedge vif.clk);
+    end
+  end
+endtask
+```
+
+
+Q32. get_next_item（）和try_next_item（）有什么区别 
+
+- get_next_item（）是一个阻塞调用，直到存在可供驱动的sequence item为止，并返回指向sequence item的指针。
 - try_next_item（）是非阻塞调用，如果没有可供驱动的sequence item，则返回空指针。
 
 </details>

@@ -1,14 +1,15 @@
 # Q5. 简述在TB中使用interface和clocking blocking的好处
 
-> 🏷️ SystemVerilog 基础 | ⭐⭐ 中等 | 💻 代码题
-> 📂 配套练习文件: [`Q05_interface和clocking_block.sv`](./Q05_interface和clocking_block.sv)
+> 🏷️ SystemVerilog 基础 | 📝 练习
+> 📂 配套代码: [`Q05_interface和clocking_block.sv`](./Q05_interface和clocking_block.sv)
 
 ---
 
 ## 🎯 题目
 
-- Interface是一组接口，用于对信号进行一个封装，捆扎起来。如果像verilog中对各个信号进行连接，每一层我们都需要对接口信号进行定义，若信号过多，很容易出现人为错误，而且后期的可重用性不高。因此使用interface接口进行连接，不仅可以简化代码，而且提高可重用性，除此之外，interface内部提供了其他一些功能，用于测试平台与DUT之间的同步和避免竞争。
+Q5.简述在TB中使用interface和clocking blocking的好处 
 
+- Interface是一组接口，用于对信号进行一个封装，捆扎起来。如果像verilog中对各个信号进行连接，每一层我们都需要对接口信号进行定义，若信号过多，很容易出现人为错误，而且后期的可重用性不高。因此使用interface接口进行连接，不仅可以简化代码，而且提高可重用性，除此之外，interface内部提供了其他一些功能，用于测试平台与DUT之间的同步和避免竞争。
 - Clocking block:在interface内部我们可以定义clocking块，可以使得信号保持同步,对于接口的采样vrbg和驱动有详细的设置操作，从而避免TB与 DUT的接口竞争，减少我们由于信号竞争导致的错误。采样提前，驱动落后，保证信号不会出现竞争。
 
 ---
@@ -18,20 +19,17 @@
 - [ ] 理解题目核心概念，能用自己的语言解释
 - [ ] 写出简洁的要点答案
 - [ ] 打开 `.sv` 文件，完成所有 `// TODO:` 标记的代码
-- [ ] 尝试编译/仿真验证你的代码
+- [ ] 结合项目经验举例说明
 - [ ] 列出面试中可能的追问
 
 ---
-
-## 💻 代码练习
-
-> 请打开 [`Q05_interface和clocking_block.sv`](./Q05_interface和clocking_block.sv) 完成代码 TODO，然后回到这里查看答案。
+> 💻 请打开 [`Q05_interface和clocking_block.sv`](./Q05_interface和clocking_block.sv) 完成代码练习，然后回来看答案。
 
 ---
 
 ## 💡 提示
 - 回顾SystemVerilog LRM相关章节
-- 注意对比不同数据结构/机制的使用场景
+- 注意对比不同机制的使用场景和差异
 
 ---
 
@@ -40,8 +38,9 @@
 <details>
 <summary>点击展开完整答案</summary>
 
-- Interface是一组接口，用于对信号进行一个封装，捆扎起来。如果像verilog中对各个信号进行连接，每一层我们都需要对接口信号进行定义，若信号过多，很容易出现人为错误，而且后期的可重用性不高。因此使用interface接口进行连接，不仅可以简化代码，而且提高可重用性，除此之外，interface内部提供了其他一些功能，用于测试平台与DUT之间的同步和避免竞争。
+Q5.简述在TB中使用interface和clocking blocking的好处 
 
+- Interface是一组接口，用于对信号进行一个封装，捆扎起来。如果像verilog中对各个信号进行连接，每一层我们都需要对接口信号进行定义，若信号过多，很容易出现人为错误，而且后期的可重用性不高。因此使用interface接口进行连接，不仅可以简化代码，而且提高可重用性，除此之外，interface内部提供了其他一些功能，用于测试平台与DUT之间的同步和避免竞争。
 - Clocking block:在interface内部我们可以定义clocking块，可以使得信号保持同步,对于接口的采样vrbg和驱动有详细的设置操作，从而避免TB与 DUT的接口竞争，减少我们由于信号竞争导致的错误。采样提前，驱动落后，保证信号不会出现竞争。
 
 </details>

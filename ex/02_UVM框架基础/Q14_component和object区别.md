@@ -1,13 +1,14 @@
 # Q14. 说一下component和object的区别，item是component还是object
 
-> 🏷️ UVM 框架基础 | ⭐⭐ 中等 | 📝 简答题
+> 🏷️ UVM 框架基础 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
-- UVM中component也是由object派生出来的，不过相比于object, component有很多其没有的属性，例如phase机制和树形结构等。在UVM中，不仅仅需要component这种较为复杂的类，进行TB的层次化搭建，也需要object这种基础类进行TB的事务搭建和一些环境配置等。
+Q14.说一下component和object的区别，item是component还是object 
 
+- UVM中component也是由object派生出来的，不过相比于object, component有很多其没有的属性，例如phase机制和树形结构等。在UVM中，不仅仅需要component这种较为复杂的类，进行TB的层次化搭建，也需要object这种基础类进行TB的事务搭建和一些环境配置等。
 - Item是object
 
 ---
@@ -32,8 +33,9 @@
 <details>
 <summary>点击展开完整答案</summary>
 
-- UVM中component也是由object派生出来的，不过相比于object, component有很多其没有的属性，例如phase机制和树形结构等。在UVM中，不仅仅需要component这种较为复杂的类，进行TB的层次化搭建，也需要object这种基础类进行TB的事务搭建和一些环境配置等。
+Q14.说一下component和object的区别，item是component还是object 
 
+- UVM中component也是由object派生出来的，不过相比于object, component有很多其没有的属性，例如phase机制和树形结构等。在UVM中，不仅仅需要component这种较为复杂的类，进行TB的层次化搭建，也需要object这种基础类进行TB的事务搭建和一些环境配置等。
 - Item是object
 
 </details>

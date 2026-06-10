@@ -1,17 +1,16 @@
 # Q34. Break；continue；return的含义，return之后，function里剩下的语句会执行吗
 
-> 🏷️ SystemVerilog 基础 | ⭐ 简单 | 💻 代码题
+> 🏷️ SystemVerilog 基础 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
+Q34. Break；continue；return的含义，return之后，function里剩下的语句会执行吗 
+
 - break 语句结束整个循环。
-
 - continue 立即结束本次循环，继续执行下一次循环。
-
 - return语句会终止函数的执行并返回函数的值(如果有返回值的话)。
-
 - return之后，function里剩下的语句不能执行，其是终止函数的执行，并返回函数的值。
 
 ---
@@ -20,15 +19,14 @@
 
 - [ ] 理解题目核心概念，能用自己的语言解释
 - [ ] 写出简洁的要点答案
-- [ ] 打开 `.sv` 文件，完成所有 `// TODO:` 标记的代码
-- [ ] 尝试编译/仿真验证你的代码
+- [ ] 结合项目经验举例说明
 - [ ] 列出面试中可能的追问
 
 ---
 
 ## 💡 提示
 - 回顾SystemVerilog LRM相关章节
-- 注意对比不同数据结构/机制的使用场景
+- 注意对比不同机制的使用场景和差异
 
 ---
 
@@ -37,12 +35,11 @@
 <details>
 <summary>点击展开完整答案</summary>
 
+Q34. Break；continue；return的含义，return之后，function里剩下的语句会执行吗 
+
 - break 语句结束整个循环。
-
 - continue 立即结束本次循环，继续执行下一次循环。
-
 - return语句会终止函数的执行并返回函数的值(如果有返回值的话)。
-
 - return之后，function里剩下的语句不能执行，其是终止函数的执行，并返回函数的值。
 
 </details>

@@ -1,12 +1,42 @@
 # Q15. UVM的树形结构
 
-> 🏷️ UVM 框架基础 | ⭐ 简单 | 📝 简答题
+> 🏷️ UVM 框架基础 | 📝 练习
 
 ---
 
 ## 🎯 题目
 
 
+**题目**: 请画出UVM的树形结构。
+
+UVM的树形结构是以 `uvm_root` 为根节点的层次化组件树：
+
+```
+uvm_root (uvm_top)
+  └── uvm_test_top (my_test)
+        └── env (my_env)
+              ├── agent_in (my_agent)
+              │     ├── sequencer
+              │     ├── driver
+              │     └── monitor
+              ├── agent_out (my_agent)
+              │     └── monitor
+              ├── reference_model
+              ├── scoreboard
+              └── coverage_collector
+```
+
+**关键点**:
+- 每个component在new时通过parent参数建立父子关系
+- build_phase自顶向下构建树
+- connect_phase自底向上连接
+- uvm_top是全局唯一的根节点，在导入uvm_pkg时自动创建
+- 只有uvm_component及其派生类才参与树形结构，uvm_object不参与
+
+
+Q15. UVM的树形结构 
+
+> 📷 [图片](https://i-blog.csdnimg.cn/blog_migrate/754038edf429c37321492278d6323db1.png)
 
 ---
 
@@ -31,6 +61,36 @@
 <summary>点击展开完整答案</summary>
 
 
+**题目**: 请画出UVM的树形结构。
+
+UVM的树形结构是以 `uvm_root` 为根节点的层次化组件树：
+
+```
+uvm_root (uvm_top)
+  └── uvm_test_top (my_test)
+        └── env (my_env)
+              ├── agent_in (my_agent)
+              │     ├── sequencer
+              │     ├── driver
+              │     └── monitor
+              ├── agent_out (my_agent)
+              │     └── monitor
+              ├── reference_model
+              ├── scoreboard
+              └── coverage_collector
+```
+
+**关键点**:
+- 每个component在new时通过parent参数建立父子关系
+- build_phase自顶向下构建树
+- connect_phase自底向上连接
+- uvm_top是全局唯一的根节点，在导入uvm_pkg时自动创建
+- 只有uvm_component及其派生类才参与树形结构，uvm_object不参与
+
+
+Q15. UVM的树形结构 
+
+> 📷 [图片](https://i-blog.csdnimg.cn/blog_migrate/754038edf429c37321492278d6323db1.png)
 
 </details>
 
